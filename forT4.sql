@@ -32,7 +32,7 @@ insert into JOB values (670,"SALESPERSON");
 insert into JOB values (671,"MANAGER");
 insert into JOB values (672,"PRESIDENT");
 select * from JOB;
-select DEPARTMENT.Location_ID,JOB._Function;
+-- select DEPARTMENT.Location_ID,JOB._Function;
 
 create table EMPLOYEE(
 	EMPLOYEE_ID int primary key,
@@ -69,3 +69,26 @@ alter table EMPLOYEE rename column Department_ID to d_id;
 
 select EMPLOYEE_ID,LAST_NAME,Department_ID from EMPLOYEE;
 select LAST_NAME,MIDDLE_NAME,FIRST_NAME,SALARY*12 from EMPLOYEE;
+
+
+
+-- 2 ;
+select * from EMPLOYEE where LAST_NAME="SMITH";
+select * from EMPLOYEE where Department_ID=20;
+-- select * from EMPLOYEE where salary between 1000 and 10000;
+select * from EMPLOYEE where (SALARY>=3000 and SALARY<=4500);
+select * from EMPLOYEE where (Department_ID=10 or Department_ID=20);
+select * from EMPLOYEE where  FIRST_NAME like "S%";
+select * from EMPLOYEE where FIRST_NAME like "S%H";
+select * from EMPLOYEE where (FIRST_NAME like "S%" and length(FIRST_NAME)=4);
+select * from EMPLOYEE where (Department_ID=10 and SALARY>3500);
+select * from EMPLOYEE where COMM is NULL;
+select EMPLOYEE_ID,LAST_NAME from EMPLOYEE order by EMPLOYEE_ID;
+select EMPLOYEE_ID,FIRST_NAME from EMPLOYEE order by salary desc;
+
+select * from EMPLOYEE order by LAST_NAME;
+select * from EMPLOYEE order by SALARY desc;
+ 
+select * from EMPLOYEE order by LAST_NAME;
+select * from EMPLOYEE order by Department_ID desc;
+
